@@ -52,7 +52,7 @@ Once complete, you should end up with a file `target/irida-plugin-species-abunda
 
 If you have previously [setup IRIDA][irida-setup] before you may copy this JAR file to `/etc/irida/plugins` and restart IRIDA.  The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 
-![example-plugin-pipeline.png][]  
+![plugin-pipeline.png][]  
 
 You should be able to run a pipeline with this plugin and get analysis results.
 
@@ -88,7 +88,7 @@ The following dependencies are required in order to make use of this plugin.
 [maven-min-pom]: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Minimal_POM
 [pf4j-start]: https://pf4j.org/doc/getting-started.html
 [example-plugin-results.png]: doc/images/example-plugin-results.png
-[example-plugin-pipeline.png]: doc/images/example-plugin-pipeline.png
+[plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [example-plugin-metadata.png]: doc/images/example-plugin-metadata.png
 [pipeline-parameters.png]: doc/images/pipeline-parameters.png
 [example-plugin-save-results.png]: doc/images/example-plugin-save-results.png

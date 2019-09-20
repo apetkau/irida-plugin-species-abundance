@@ -71,7 +71,7 @@ public class SpeciesAbundancePlugin extends Plugin {
 		 * <strong>id</strong> entry in the <strong>irida_workflow.xml</strong> file.
 		 * 
 		 * <pre>
-		 * {@code <id>79d90ca8-00ae-441b-b5c7-193c9e85a968</id>}
+		 * {@code <id>152c9062-d39b-4fce-8234-2353223afc90</id>}
 		 * </pre>
 		 * 
 		 * @return A {@link UUID} defining the id of this pipeline.
