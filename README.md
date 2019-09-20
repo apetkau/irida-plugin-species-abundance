@@ -79,9 +79,9 @@ The following dependencies are required in order to make use of this plugin.
 [pom.xml]: pom.xml
 [workflows-dir]: src/main/resources/workflows
 [workflow-structure]: src/main/resources/workflows/0.1.0/irida_workflow_structure.ga
-[example-plugin-java]: src/main/java/ca/corefacility/bioinformatics/irida/plugins/ExamplePlugin.java
+[speciesabundance-plugin-java]: src/main/java/ca/corefacility/bioinformatics/irida/plugins/SpeciesAbundancePlugin.java
 [irida-plugin-java]: https://github.com/phac-nml/irida/tree/development/src/main/java/ca/corefacility/bioinformatics/irida/plugins/IridaPlugin.java
-[irida-updater]: src/main/java/ca/corefacility/bioinformatics/irida/plugins/ExamplePluginUpdater.java
+[irida-updater]: src/main/java/ca/corefacility/bioinformatics/irida/plugins/SpeciesAbundancePluginUpdater.java
 [irida-setup]: https://irida.corefacility.ca/documentation/administrator/index.html
 [properties]: https://en.wikipedia.org/wiki/.properties
 [messages]: src/main/resources/workflows/0.1.0/messages_en.properties
@@ -91,4 +91,4 @@ The following dependencies are required in order to make use of this plugin.
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
 [pipeline-parameters.png]: doc/images/pipeline-parameters.png
-[example-plugin-save-results.png]: doc/images/example-plugin-save-results.png
+[plugin-save-results.png]: doc/images/plugin-save-results.png
