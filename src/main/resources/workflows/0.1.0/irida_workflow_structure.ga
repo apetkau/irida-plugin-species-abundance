@@ -1,9 +1,9 @@
 {
-    "uuid": "3e2b93a0-5d88-49ea-9a44-9bc7674088c9",
+    "uuid": "ea152b40-93ca-4c0a-8461-785dd4107671",
     "tags": [],
     "format-version": "0.1",
     "name": "Species Abundance",
-    "version": 3,
+    "version": 6,
     "steps": {
         "0": {
             "tool_id": null,
@@ -92,7 +92,7 @@
                     "id": 0
                 }
             },
-            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"\\\"\\\"\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"false\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
+            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"false\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
             "id": 1,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -170,11 +170,15 @@
                 {
                     "name": "single_paired",
                     "description": "runtime parameter for tool Kraken2"
+                },
+                {
+                    "name": "kraken2_database",
+                    "description": "runtime parameter for tool Kraken2"
                 }
             ],
             "position": {
-                "top": 301,
-                "left": 490.5
+                "top": 276,
+                "left": 411.5
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0",
@@ -202,7 +206,7 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"kmer_distr\": \"null\"}",
+            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"kmer_distr\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
             "id": 2,
             "tool_shed_repository": {
                 "owner": "dfornika",
@@ -213,12 +217,29 @@
             "uuid": "dfe8d616-1413-4634-be00-e314b9f73857",
             "errors": null,
             "name": "Estimate Abundance at Taxonomic Level",
-            "post_job_actions": {},
+            "post_job_actions": {
+                "RenameDatasetActionreport": {
+                    "output_name": "report",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "species_abundance.tsv"
+                    }
+                }
+            },
             "label": null,
-            "inputs": [],
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
+                },
+                {
+                    "name": "kmer_distr",
+                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
+                }
+            ],
             "position": {
-                "top": 359,
-                "left": 811
+                "top": 378,
+                "left": 751
             },
             "annotation": "",
             "content_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0",

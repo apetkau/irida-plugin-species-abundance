@@ -12,7 +12,10 @@
     <parameter name="kraken2-1-confidence" defaultValue="0.0">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="confidence" label="Confidence" type="float"/>
     </parameter>
-    <parameter name="kraken2-1-kraken2_database" defaultValue="">
+    <parameter name="kraken2-1-kraken2_database" required="true">
+      <dynamicSource>
+        <galaxyToolDataTable name="kraken2_databases" displayColumn="name" parameterColumn="value" />
+      </dynamicSource>
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="kraken2_database"/>
     </parameter>
     <parameter name="kraken2-1-use_names" defaultValue="false">
@@ -39,14 +42,19 @@
     <parameter name="kraken2-1-report.use_mpa_style" defaultValue="false">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="report.use_mpa_style" label="Format report output like Kraken 1's kraken-mpa-report" type="boolean"/>
     </parameter>
-    <parameter name="bracken-2-level" defaultValue="S">
-      <toolParameter toolId="testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0" parameterName="level"/>
-    </parameter>
     <parameter name="bracken-2-threshold" defaultValue="10">
       <toolParameter toolId="testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0" parameterName="threshold"/>
     </parameter>
+    <parameter name="bracken-2-kmer_distr" required="true">
+      <dynamicSource>
+        <galaxyToolDataTable name="bracken_databases" displayColumn="name" parameterColumn="value" />
+      </dynamicSource>
+      <toolParameter toolId="testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0" parameterName="kmer_distr"/>
+    </parameter>
   </parameters>
-  <outputs/>
+  <outputs>
+    <output name="species_abundance" fileName="species_abundance.tsv" />
+  </outputs>
   <toolRepositories>
     <repository>
       <name>kraken2</name>
