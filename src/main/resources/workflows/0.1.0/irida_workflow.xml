@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iridaWorkflow>
   <id>152c9062-d39b-4fce-8234-2353223afc90</id>
-  <name>SpeciesAbundance</name>
+  <name>species-abundance</name>
   <version>0.1.0</version>
   <analysisType>SPECIES_ABUNDANCE</analysisType>
   <inputs>
-    <sequenceReadsPaired/>
+    <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
@@ -33,9 +33,6 @@
     <parameter name="kraken2-1-report.report_zero_counts" defaultValue="false">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="report.report_zero_counts" label="Report counts for ALL taxa, even if counts are zero" type="boolean"/>
     </parameter>
-    <parameter name="kraken2-1-report.create_report" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="report.create_report" label="Print a report with aggregrate counts/clade to file" type="boolean"/>
-    </parameter>
     <parameter name="kraken2-1-quick" defaultValue="false">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="quick" label="Enable quick operation" type="boolean"/>
     </parameter>
@@ -53,7 +50,9 @@
     </parameter>
   </parameters>
   <outputs>
+    <output name="kraken2_report" fileName="kraken2_report.tsv" />
     <output name="species_abundance" fileName="species_abundance.tsv" />
+    <output name="species_abundance_sorted" fileName="species_abundance_sorted.tsv" />
   </outputs>
   <toolRepositories>
     <repository>

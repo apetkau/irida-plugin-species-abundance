@@ -1,9 +1,9 @@
 {
-    "uuid": "ea152b40-93ca-4c0a-8461-785dd4107671",
+    "uuid": "b6ac9ea1-b72a-4f61-b1c0-198f2e2ba9cc",
     "tags": [],
     "format-version": "0.1",
     "name": "Species Abundance",
-    "version": 6,
+    "version": 3,
     "steps": {
         "0": {
             "tool_id": null,
@@ -85,14 +85,20 @@
                     "name": "output"
                 }
             ],
-            "workflow_outputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "report_output",
+                    "uuid": "26e64288-9604-4c9f-bc48-b3274cba2fa9",
+                    "label": null
+                }
+            ],
             "input_connections": {
                 "single_paired|input_pair": {
                     "output_name": "output",
                     "id": 0
                 }
             },
-            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"false\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
+            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"true\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
             "id": 1,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -154,15 +160,17 @@
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
-                "HideDatasetActionreport_output": {
-                    "output_name": "report_output",
-                    "action_type": "HideDatasetAction",
-                    "action_arguments": {}
-                },
                 "HideDatasetActionout3.1": {
                     "output_name": "out3.1",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
+                },
+                "RenameDatasetActionreport_output": {
+                    "output_name": "report_output",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "kraken2_report.tsv"
+                    }
                 }
             },
             "label": null,
@@ -206,7 +214,7 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"kmer_distr\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"kmer_distr\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
             "id": 2,
             "tool_shed_repository": {
                 "owner": "dfornika",
@@ -229,10 +237,6 @@
             "label": null,
             "inputs": [
                 {
-                    "name": "input",
-                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
-                },
-                {
                     "name": "kmer_distr",
                     "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
                 }
@@ -243,6 +247,57 @@
             },
             "annotation": "",
             "content_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0",
+            "type": "tool"
+        },
+        "3": {
+            "tool_id": "sort1",
+            "tool_version": "1.1.0",
+            "outputs": [
+                {
+                    "type": "input",
+                    "name": "out_file1"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "out_file1",
+                    "uuid": "bd26fa68-7e98-4ee7-a30d-08f51a843ba7",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "input": {
+                    "output_name": "report",
+                    "id": 2
+                }
+            },
+            "tool_state": "{\"__page__\": null, \"style\": \"\\\"num\\\"\", \"column\": \"\\\"7\\\"\", \"__rerun_remap_job_id__\": null, \"column_set\": \"[]\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"header_lines\": \"\\\"1\\\"\", \"order\": \"\\\"DESC\\\"\"}",
+            "id": 3,
+            "uuid": "27582536-6f3a-41df-a0bc-18ea7eea1a27",
+            "errors": null,
+            "name": "Sort",
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "output_name": "out_file1",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "species_abundance_sorted.tsv"
+                    }
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "runtime parameter for tool Sort"
+                }
+            ],
+            "position": {
+                "top": 335.5,
+                "left": 1068
+            },
+            "annotation": "",
+            "content_id": "sort1",
             "type": "tool"
         }
     },
