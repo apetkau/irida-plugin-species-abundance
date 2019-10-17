@@ -22,7 +22,7 @@
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.0.8_beta+galaxy0" parameterName="min_base_quality" label="Minimum Base Quality" type="integer"/>
     </parameter>
     <parameter name="bracken-2-threshold" defaultValue="10">
-      <toolParameter toolId="testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0" parameterName="threshold"/>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/2.5+galaxy0" parameterName="threshold"/>
     </parameter>
     <parameter name="bracken-2-kmer_distr" required="true">
       <dynamicSource>
@@ -46,7 +46,7 @@
       <name>bracken</name>
       <owner>iuc</owner>
       <url>https://toolshed.g2.bx.psu.edu</url>
-      <revision>b7b1c8bf7ae0</revision>
+      <revision>a5145865e467</revision>
     </repository>
   </toolRepositories>
 </iridaWorkflow>

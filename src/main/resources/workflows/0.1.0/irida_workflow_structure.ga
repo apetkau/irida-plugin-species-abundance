@@ -1,5 +1,5 @@
 {
-    "uuid": "d446c70e-a4da-4117-87c6-5ace1cf53c6a",
+    "uuid": "171e552c-a1fe-4d3c-ba16-9100994fb169",
     "tags": [],
     "format-version": "0.1",
     "name": "Species Abundance",
@@ -189,8 +189,8 @@
             "type": "tool"
         },
         "2": {
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/@VERSION@+galaxy0",
-            "tool_version": "@VERSION@+galaxy0",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/2.5+galaxy0",
+            "tool_version": "2.5+galaxy0",
             "outputs": [
                 {
                     "type": "tabular",
@@ -204,11 +204,11 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"values\\\": [{\\\"id\\\": 3353, \\\"src\\\": \\\"hda\\\"}]}\", \"kmer_distr\": \"\\\"fcf11762-0cdc-45e1-9c74-1aaf6259c05f\\\"\"}",
+            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"kmer_distr\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
             "id": 2,
             "tool_shed_repository": {
                 "owner": "iuc",
-                "changeset_revision": "b7b1c8bf7ae0",
+                "changeset_revision": "a5145865e467",
                 "name": "bracken",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
@@ -223,13 +223,22 @@
                 }
             },
             "label": null,
-            "inputs": [],
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
+                },
+                {
+                    "name": "kmer_distr",
+                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
+                }
+            ],
             "position": {
                 "top": 278.5,
                 "left": 731
             },
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/@VERSION@+galaxy0",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/2.5+galaxy0",
             "type": "tool"
         },
         "3": {
@@ -254,7 +263,7 @@
                     "id": 2
                 }
             },
-            "tool_state": "{\"__page__\": null, \"style\": \"\\\"num\\\"\", \"column\": \"\\\"7\\\"\", \"__rerun_remap_job_id__\": null, \"column_set\": \"[]\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"header_lines\": \"\\\"1\\\"\", \"order\": \"\\\"DESC\\\"\"}",
+            "tool_state": "{\"__page__\": null, \"style\": \"\\\"num\\\"\", \"column\": \"\\\"7\\\"\", \"__rerun_remap_job_id__\": null, \"column_set\": \"[]\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"header_lines\": \"\\\"1\\\"\", \"order\": \"\\\"DESC\\\"\"}",
             "id": 3,
             "uuid": "1099f9c0-fe03-4de1-9ab7-1942fba74c84",
             "errors": null,
@@ -269,12 +278,7 @@
                 }
             },
             "label": null,
-            "inputs": [
-                {
-                    "name": "input",
-                    "description": "runtime parameter for tool Sort"
-                }
-            ],
+            "inputs": [],
             "position": {
                 "top": 478.5,
                 "left": 732.5
