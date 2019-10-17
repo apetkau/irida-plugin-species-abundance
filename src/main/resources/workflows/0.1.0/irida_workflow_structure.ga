@@ -1,9 +1,9 @@
 {
-    "uuid": "b6ac9ea1-b72a-4f61-b1c0-198f2e2ba9cc",
+    "uuid": "d446c70e-a4da-4117-87c6-5ace1cf53c6a",
     "tags": [],
     "format-version": "0.1",
     "name": "Species Abundance",
-    "version": 3,
+    "version": 1,
     "steps": {
         "0": {
             "tool_id": null,
@@ -98,7 +98,7 @@
                     "id": 0
                 }
             },
-            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"true\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
+            "tool_state": "{\"__page__\": null, \"confidence\": \"\\\"0.0\\\"\", \"split_reads\": \"\\\"false\\\"\", \"single_paired\": \"{\\\"__current_case__\\\": 0, \\\"input_pair\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}, \\\"single_paired_selector\\\": \\\"collection\\\"}\", \"__rerun_remap_job_id__\": null, \"quick\": \"\\\"false\\\"\", \"kraken2_database\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"use_names\": \"\\\"false\\\"\", \"min_base_quality\": \"\\\"0\\\"\", \"report\": \"{\\\"create_report\\\": \\\"true\\\", \\\"report_zero_counts\\\": \\\"false\\\", \\\"use_mpa_style\\\": \\\"false\\\"}\"}",
             "id": 1,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -176,10 +176,6 @@
             "label": null,
             "inputs": [
                 {
-                    "name": "single_paired",
-                    "description": "runtime parameter for tool Kraken2"
-                },
-                {
                     "name": "kraken2_database",
                     "description": "runtime parameter for tool Kraken2"
                 }
@@ -193,60 +189,47 @@
             "type": "tool"
         },
         "2": {
-            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0",
-            "tool_version": "2.5+galaxy0",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/@VERSION@+galaxy0",
+            "tool_version": "@VERSION@+galaxy0",
             "outputs": [
                 {
                     "type": "tabular",
                     "name": "report"
                 }
             ],
-            "workflow_outputs": [
-                {
-                    "output_name": "report",
-                    "uuid": "2d8b4ed1-b717-4b00-b75b-12f4bf3e2f79",
-                    "label": null
-                }
-            ],
+            "workflow_outputs": [],
             "input_connections": {
                 "input": {
                     "output_name": "report_output",
                     "id": 1
                 }
             },
-            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"kmer_distr\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+            "tool_state": "{\"__page__\": null, \"level\": \"\\\"S\\\"\", \"__rerun_remap_job_id__\": null, \"threshold\": \"\\\"10\\\"\", \"input\": \"{\\\"values\\\": [{\\\"id\\\": 3353, \\\"src\\\": \\\"hda\\\"}]}\", \"kmer_distr\": \"\\\"fcf11762-0cdc-45e1-9c74-1aaf6259c05f\\\"\"}",
             "id": 2,
             "tool_shed_repository": {
-                "owner": "dfornika",
-                "changeset_revision": "6e90882d79fd",
+                "owner": "iuc",
+                "changeset_revision": "b7b1c8bf7ae0",
                 "name": "bracken",
-                "tool_shed": "testtoolshed.g2.bx.psu.edu"
+                "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "uuid": "dfe8d616-1413-4634-be00-e314b9f73857",
+            "uuid": "928eb838-cb82-4621-b309-cbe0e4487d47",
             "errors": null,
             "name": "Estimate Abundance at Taxonomic Level",
             "post_job_actions": {
-                "RenameDatasetActionreport": {
+                "HideDatasetActionreport": {
                     "output_name": "report",
-                    "action_type": "RenameDatasetAction",
-                    "action_arguments": {
-                        "newname": "species_abundance.tsv"
-                    }
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
                 }
             },
             "label": null,
-            "inputs": [
-                {
-                    "name": "kmer_distr",
-                    "description": "runtime parameter for tool Estimate Abundance at Taxonomic Level"
-                }
-            ],
+            "inputs": [],
             "position": {
-                "top": 378,
-                "left": 751
+                "top": 278.5,
+                "left": 731
             },
             "annotation": "",
-            "content_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/bracken/est_abundance/2.5+galaxy0",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/@VERSION@+galaxy0",
             "type": "tool"
         },
         "3": {
@@ -261,7 +244,7 @@
             "workflow_outputs": [
                 {
                     "output_name": "out_file1",
-                    "uuid": "bd26fa68-7e98-4ee7-a30d-08f51a843ba7",
+                    "uuid": "d81f9118-f0cf-4659-88f6-ca712a6d457e",
                     "label": null
                 }
             ],
@@ -273,7 +256,7 @@
             },
             "tool_state": "{\"__page__\": null, \"style\": \"\\\"num\\\"\", \"column\": \"\\\"7\\\"\", \"__rerun_remap_job_id__\": null, \"column_set\": \"[]\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"header_lines\": \"\\\"1\\\"\", \"order\": \"\\\"DESC\\\"\"}",
             "id": 3,
-            "uuid": "27582536-6f3a-41df-a0bc-18ea7eea1a27",
+            "uuid": "1099f9c0-fe03-4de1-9ab7-1942fba74c84",
             "errors": null,
             "name": "Sort",
             "post_job_actions": {
@@ -281,7 +264,7 @@
                     "output_name": "out_file1",
                     "action_type": "RenameDatasetAction",
                     "action_arguments": {
-                        "newname": "species_abundance_sorted.tsv"
+                        "newname": "species_abundance.tsv"
                     }
                 }
             },
@@ -293,8 +276,8 @@
                 }
             ],
             "position": {
-                "top": 335.5,
-                "left": 1068
+                "top": 478.5,
+                "left": 732.5
             },
             "annotation": "",
             "content_id": "sort1",

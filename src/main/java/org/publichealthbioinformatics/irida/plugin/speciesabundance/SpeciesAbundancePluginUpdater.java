@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.*;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
 
 import ca.corefacility.bioinformatics.irida.exceptions.IridaWorkflowNotFoundException;
@@ -88,17 +89,22 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 			String workflowVersion = iridaWorkflow.getWorkflowDescription().getVersion();
 			String workflowName = iridaWorkflow.getWorkflowDescription().getName();
 
-			Map<String, String> mostAbundantSpecies = parseMostAbundantSpecies(speciesAbundanceFilePath);
+			Map<String, String> mostAbundantSpecies = parseSpeciesAbundanceFile(speciesAbundanceFilePath);
 
 			String mostAbundantSpeciesName = mostAbundantSpecies.get("name");
 			PipelineProvidedMetadataEntry mostAbundantSpeciesNameEntry = new PipelineProvidedMetadataEntry(mostAbundantSpeciesName, "text", analysis);
-			String mostAbundantSpeciesNameKey = workflowName + "/" + "name";
+			String mostAbundantSpeciesNameKey = workflowName + "/" + "taxon_name";
 			metadataEntries.put(mostAbundantSpeciesNameKey, mostAbundantSpeciesNameEntry);
 
-			String mostAbundantSpeciesTaxid = mostAbundantSpecies.get("taxonomy_id");
-			PipelineProvidedMetadataEntry mostAbundantSpeciesTaxidEntry = new PipelineProvidedMetadataEntry(mostAbundantSpeciesTaxid, "text", analysis);
-			String mostAbundantSpeciesTaxidKey = workflowName + "/" + "taxid";
-			metadataEntries.put(mostAbundantSpeciesTaxidKey, mostAbundantSpeciesTaxidEntry);
+			String mostAbundantSpeciesTaxonomyLevel = mostAbundantSpecies.get("taxonomy_lvl");
+			PipelineProvidedMetadataEntry mostAbundantSpeciesTaxonomyLevelEntry = new PipelineProvidedMetadataEntry(mostAbundantSpeciesTaxonomyLevel, "text", analysis);
+			String mostAbundantSpeciesTaxonomyLevelKey = workflowName + "/" + "taxonomy_level";
+			metadataEntries.put(mostAbundantSpeciesTaxonomyLevelKey, mostAbundantSpeciesTaxonomyLevelEntry);
+
+			String mostAbundantSpeciesTaxonomyId = mostAbundantSpecies.get("taxonomy_id");
+			PipelineProvidedMetadataEntry mostAbundantSpeciesTaxonomyIdEntry = new PipelineProvidedMetadataEntry(mostAbundantSpeciesTaxonomyId, "text", analysis);
+			String mostAbundantSpeciesTaxonomyIdKey = workflowName + "/" + "taxonomy_id";
+			metadataEntries.put(mostAbundantSpeciesTaxonomyIdKey, mostAbundantSpeciesTaxonomyIdEntry);
 
 			String mostAbundantSpeciesProportionTotalReads = mostAbundantSpecies.get("fraction_total_reads");
 			PipelineProvidedMetadataEntry mostAbundantSpeciesProportionTotalReadsEntry = new PipelineProvidedMetadataEntry(mostAbundantSpeciesProportionTotalReads, "float", analysis);
@@ -123,17 +129,19 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 	/**
 	 * Parses out the read count from the passed file.
 	 * 
-	 * @param speciesAbundanceFilePath The file containing the read count. The file contents
-	 *                      should look like (representing 10 reads):
+	 * @param speciesAbundanceFilePath The file containing the species abundance. The file contents
+	 *                      should look like:
 	 * 
 	 *                      <pre>
-	 *                      10
+	 *                      name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
+	 *                      Salmonella enterica	28901	S	433515	32457	465972	0.99016
 	 *                      </pre>
 	 * 
 	 * @return A {@link Map<String, String>} containing the read count.
 	 * @throws IOException If there was an error reading the file.
 	 */
-	private Map<String, String> parseMostAbundantSpecies(Path speciesAbundanceFilePath) throws IOException {
+	@VisibleForTesting
+	Map<String, String> parseSpeciesAbundanceFile(Path speciesAbundanceFilePath) throws IOException {
 		BufferedReader speciesAbundanceReader = new BufferedReader(new FileReader(speciesAbundanceFilePath.toFile()));
 		Map<String, String> mostAbundantSpecies = new HashMap<>();
 
