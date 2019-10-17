@@ -78,7 +78,7 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 		final Sample sample = samples.iterator().next();
 
 		// extracts paths to the analysis result files
-		AnalysisOutputFile speciesAbundanceFile = analysis.getAnalysis().getAnalysisOutputFile("species_abundance_sorted");
+		AnalysisOutputFile speciesAbundanceFile = analysis.getAnalysis().getAnalysisOutputFile("species_abundance");
 		Path speciesAbundanceFilePath = speciesAbundanceFile.getFile();
 
 		try {
