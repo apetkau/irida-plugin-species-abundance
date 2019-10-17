@@ -1,5 +1,7 @@
 # IRIDA Species Abundance Pipeline Plugin
 
+![galaxy-workflow-diagram.png][]
+
 This project contains a pipeline implemented as a plugin for the [IRIDA][] bioinformatics analysis system. 
 This can be used to estimate the relative abundance of sequence reads originating from different species in a sample.
 
@@ -92,3 +94,4 @@ The following dependencies are required in order to make use of this plugin.
 [plugin-metadata.png]: doc/images/plugin-metadata.png
 [pipeline-parameters.png]: doc/images/pipeline-parameters.png
 [plugin-save-results.png]: doc/images/plugin-save-results.png
+[galaxy-workflow-diagram.png]: doc/images/galaxy-workflow-diagram.png
