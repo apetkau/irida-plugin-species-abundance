@@ -64,14 +64,15 @@ public class SpeciesAbundancePluginUpdaterTest {
     @Test
     public void testUpdate() throws Throwable {
         ImmutableMap<String, String> expectedResults = ImmutableMap.<String, String>builder()
-                .put("abricate-screen/KPC/detected", "False")
-                .put("abricate-screen/NDM/detected", "True")
-                .put("abricate-screen/OXA/detected", "True")
+                .put("species-abundance/taxon_name", "Escherichia coli")
+                .put("species-abundance/taxonomy_level", "S")
+                .put("species-abundance/taxonomy_id", "562")
+                .put("species-abundance/proportion", "0.98546")
                 .build();
-        Path geneDetectionStatusFilePath = Paths.get(ClassLoader.getSystemResource("gene_detection_status.tsv").toURI());
+        Path speciesAbundanceFilePath = Paths.get(ClassLoader.getSystemResource("species_abundance.tsv").toURI());
 
-        AnalysisOutputFile geneDetectionStatusFile = new AnalysisOutputFile(geneDetectionStatusFilePath, null, null, null);
-        Analysis analysis = new Analysis(null, ImmutableMap.of("gene_detection_status", geneDetectionStatusFile), null, null);
+        AnalysisOutputFile speciesAbundanceFile = new AnalysisOutputFile(speciesAbundanceFilePath, null, null, null);
+        Analysis analysis = new Analysis(null, ImmutableMap.of("species_abundance", speciesAbundanceFile), null, null);
         AnalysisSubmission submission = AnalysisSubmission.builder(uuid)
                 .inputFiles(ImmutableSet.of(new SingleEndSequenceFile(null))).build();
 
