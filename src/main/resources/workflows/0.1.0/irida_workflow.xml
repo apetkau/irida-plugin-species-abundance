@@ -48,5 +48,17 @@
       <url>https://toolshed.g2.bx.psu.edu</url>
       <revision>a5145865e467</revision>
     </repository>
+    <repository>
+      <name>data_manager_build_kraken2_database</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>6ba1ec5f86fc</revision>
+    </repository>
+    <repository>
+      <name>data_manager_build_bracken_database</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>c2e4127fb5bf</revision>
+    </repository>
   </toolRepositories>
 </iridaWorkflow>
