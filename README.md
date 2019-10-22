@@ -26,12 +26,12 @@ This can be used to estimate the relative abundance of sequence reads originatin
 In order to use this pipeline, you will also have to install the [kraken2][] and [bracken][] Galaxy tools and their data 
 managers within your Galaxy instance. These can be found at:
 
-| Name                               | Version       | Galaxy Tool                                                                                |
-|------------------------------------|---------------|--------------------------------------------------------------------------------------------|
-| kraken2                            | `2.0.8_beta`  | <https://toolshed.g2.bx.psu.edu/view/iuc/kraken2/328c607150ff>                             |
-| bracken                            | `2.5`         | <https://toolshed.g2.bx.psu.edu/view/iuc/bracken/a5145865e467>                             |
-| data_manager_build_kraken2_database| `2.0.8_beta`  | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_kraken2_database/6ba1ec5f86fc> |
-| data_manager_build_bracken_database| `2.5`         | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_bracken_database/c2e4127fb5bf> |
+| Name                               | Version               | Galaxy Tool                                                                                |
+|------------------------------------|-----------------------|--------------------------------------------------------------------------------------------|
+| kraken2                            | `2.0.8_beta+galaxy0`  | <https://toolshed.g2.bx.psu.edu/view/iuc/kraken2/328c607150ff>                             |
+| bracken                            | `2.5+galaxy0`         | <https://toolshed.g2.bx.psu.edu/view/iuc/bracken/a5145865e467>                             |
+| data_manager_build_kraken2_database| `2.0.8_beta+galaxy1`  | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_kraken2_database/6ba1ec5f86fc> |
+| data_manager_build_bracken_database| `2.5+galaxy0`         | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_bracken_database/c2e4127fb5bf> |
 
 ## Installing to IRIDA
 
