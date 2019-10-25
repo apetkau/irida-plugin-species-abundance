@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Public-Health-Bioinformatics/irida-plugin-species-abundance.svg?branch=master)](https://travis-ci.org/Public-Health-Bioinformatics/irida-plugin-species-abundance)
 [![GitHub release](https://img.shields.io/github/release/public-health-bioinformatics/irida-plugin-species-abundance.svg)](https://github.com/public-health-bioinformatics/irida-plugin-species-abundance/releases/latest)
 
 # IRIDA Species Abundance Pipeline Plugin
