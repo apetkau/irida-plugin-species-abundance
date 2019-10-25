@@ -1,3 +1,5 @@
+[![GitHub release](https://img.shields.io/github/release/public-health-bioinformatics/irida-plugin-species-abundance.svg)](https://github.com/public-health-bioinformatics/irida-plugin-species-abundance/releases/latest)
+
 # IRIDA Species Abundance Pipeline Plugin
 
 ![galaxy-workflow-diagram.png][]
