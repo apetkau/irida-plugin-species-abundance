@@ -10,8 +10,8 @@ language: java
 # A list of available JDKs in Trusty can be seed in:
 # https://docs.travis-ci.com/user/reference/trusty/#jvm-clojure-groovy-java-scala-images
 jdk:
- - oraclejdk8
- - openjdk8
+ - oraclejdk11
+ - openjdk11
 
 cache:
   directories:
@@ -20,7 +20,7 @@ cache:
 before_install:
   - pushd ..
   - git clone https://github.com/phac-nml/irida.git
-  - pushd irida; git checkout -b 19.01.3 19.01.3;
+  - pushd irida; git checkout -b 21.01 21.01;
   - pushd lib; ./install-libs.sh; popd
   - mvn clean install -DskipTests; popd
   - popd
