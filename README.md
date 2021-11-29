@@ -32,10 +32,10 @@ managers within your Galaxy instance. These can be found at:
 
 | Name                               | Version               | Revision                                                                                   |
 |------------------------------------|-----------------------|--------------------------------------------------------------------------------------------|
-| kraken2                            | `2.1.1+galaxy1`       | `[e674066930b2](https://toolshed.g2.bx.psu.edu/view/iuc/kraken2/e674066930b2)`             |
-| bracken                            | `2.6.1+galaxy0`       | <https://toolshed.g2.bx.psu.edu/view/iuc/bracken/b08ac10aed96>                             |
-| data_manager_build_kraken2_database| `2.1.1`               | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_kraken2_database/2f27f3b86827> |
-| data_manager_build_bracken_database| `2.5.1+galaxy1`       | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_bracken_database/3c7d2c84cb09> |
+| kraken2                            | `2.1.1+galaxy1`       | [`e674066930b2`](https://toolshed.g2.bx.psu.edu/view/iuc/kraken2/e674066930b2)             |
+| bracken                            | `2.6.1+galaxy0`       | [`b08ac10aed96`](https://toolshed.g2.bx.psu.edu/view/iuc/bracken/b08ac10aed96)             |
+| data_manager_build_kraken2_database| `2.1.1`               | [`2f27f3b86827`](https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_kraken2_database/2f27f3b86827) |
+| data_manager_build_bracken_database| `2.5.1+galaxy1`       | [`3c7d2c84cb09`](https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_bracken_database/3c7d2c84cb09) |
 
 ## Preparing Databases
 
