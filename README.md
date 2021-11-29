@@ -36,6 +36,42 @@ managers within your Galaxy instance. These can be found at:
 | data_manager_build_kraken2_database| `2.1.1`               | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_kraken2_database/2f27f3b86827> |
 | data_manager_build_bracken_database| `2.5.1+galaxy1`       | <https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_build_bracken_database/3c7d2c84cb09> |
 
+## Preparing Databases
+
+This pipeline requires databases for kraken2 and bracken to be installed in Galaxy. The Galaxy admin can do this using the `data_manager_build_kraken2_database` and
+`data_manager_build_bracken_database` tools that are listed above.
+
+In the Galaxy 'Admin' panel, select 'Local Data' from the left-side menu:
+
+[installation-local-data][]
+
+### Preparing the Kraken2 Database
+
+On the 'Local Data' page, select 'Kraken2 database builder' from the 'Installed Data Managers' list:
+
+[installation-local-data-kraken2-builder][]
+
+Choose the type of Kraken2 database to install. For most analyses, the 'Standard' database is recommended. For reproducibility and standardization, using a
+'pre-built' database is recommended. Pre-built databases are downloaded from Ben Langmead's '[Index Zone](https://benlangmead.github.io/aws-indexes/k2)'. To get the very latest sequences
+from RefSeq, a Standard database can be built locally. Note that building a standard kraken2 database is a computationally resource-intensive job. Consult the
+[kraken2 docs](https://github.com/DerrickWood/kraken2/wiki/Manual) for details.
+
+[installation-local-data-kraken2-builder-db-type][]
+
+If a pre-built database type is selected, choose the size of database to download. Larger databases contain more detailed information and are able to correctly assign reads to a greater
+variety of species. Note that the entire database will be loaded into system RAM during analysis. Ensure that your system can support the database before downloading.
+
+[installation-local-data-kraken2-builder-db-size][]
+
+If a pre-built database is selected, choose the build date for the database. The most recent build date is generally preferred.
+
+[installation-local-data-kraken2-builder-db-date][]
+
+Click the 'Execute' button to begin downloading (or building) the Kraken2 database. The download or build process may take significant time, depending on system resources. When complete, the
+Kraken2 job in the Galaxy History panel will turn green:
+
+[installation-local-data-kraken2-builder-db-complete][]
+
 ## Installing to IRIDA
 
 Please download the provided `irida-plugin-species-abundance-[version].jar` from the [releases][https://github.com/Public-Health-Bioinformatics/irida-plugin-species-abundance/releases]
@@ -139,6 +175,12 @@ The following dependencies are required in order to make use of this plugin.
 [messages]: src/main/resources/workflows/0.1.0/messages_en.properties
 [maven-min-pom]: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Minimal_POM
 [pf4j-start]: https://pf4j.org/doc/getting-started.html
+[installation-local-data]: doc/images/installation-local-data.png
+[installation-local-data-kraken2-builder]: doc/images/installation-local-data-kraken2-builder.png
+[intallation-local-data-kraken2-builder-db-type]: doc/images/installation-local-data-kraken2-builder-db-type.png
+[intallation-local-data-kraken2-builder-db-size]: doc/images/installation-local-data-kraken2-builder-db-size.png
+[intallation-local-data-kraken2-builder-db-date]: doc/images/installation-local-data-kraken2-builder-db-date.png
+[installation-local-data-kraken2-builder-db-complete]: doc/images/installation-local-data-kraken2-builder-db-complete
 [plugin-results.png]: doc/images/plugin-results.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
