@@ -181,7 +181,7 @@ The following dependencies are required in order to make use of this plugin.
 [installation-local-data-kraken2-builder-db-type]: doc/images/installation-local-data-kraken2-builder-db-type.png
 [installation-local-data-kraken2-builder-db-size]: doc/images/installation-local-data-kraken2-builder-db-size.png
 [installation-local-data-kraken2-builder-db-date]: doc/images/installation-local-data-kraken2-builder-db-date.png
-[installation-local-data-kraken2-builder-db-complete]: doc/images/installation-local-data-kraken2-builder-db-complete
+[installation-local-data-kraken2-builder-db-complete]: doc/images/installation-local-data-kraken2-builder-db-complete.png
 [plugin-results.png]: doc/images/plugin-results.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
