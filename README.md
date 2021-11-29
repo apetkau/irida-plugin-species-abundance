@@ -43,34 +43,34 @@ This pipeline requires databases for kraken2 and bracken to be installed in Gala
 
 In the Galaxy 'Admin' panel, select 'Local Data' from the left-side menu:
 
-[installation-local-data][]
+![installation-local-data][]
 
 ### Preparing the Kraken2 Database
 
 On the 'Local Data' page, select 'Kraken2 database builder' from the 'Installed Data Managers' list:
 
-[installation-local-data-kraken2-builder][]
+![installation-local-data-kraken2-builder][]
 
 Choose the type of Kraken2 database to install. For most analyses, the 'Standard' database is recommended. For reproducibility and standardization, using a
 'pre-built' database is recommended. Pre-built databases are downloaded from Ben Langmead's '[Index Zone](https://benlangmead.github.io/aws-indexes/k2)'. To get the very latest sequences
 from RefSeq, a Standard database can be built locally. Note that building a standard kraken2 database is a computationally resource-intensive job. Consult the
 [kraken2 docs](https://github.com/DerrickWood/kraken2/wiki/Manual) for details.
 
-[installation-local-data-kraken2-builder-db-type][]
+![installation-local-data-kraken2-builder-db-type][]
 
 If a pre-built database type is selected, choose the size of database to download. Larger databases contain more detailed information and are able to correctly assign reads to a greater
 variety of species. Note that the entire database will be loaded into system RAM during analysis. Ensure that your system can support the database before downloading.
 
-[installation-local-data-kraken2-builder-db-size][]
+![installation-local-data-kraken2-builder-db-size][]
 
 If a pre-built database is selected, choose the build date for the database. The most recent build date is generally preferred.
 
-[installation-local-data-kraken2-builder-db-date][]
+![installation-local-data-kraken2-builder-db-date][]
 
 Click the 'Execute' button to begin downloading (or building) the Kraken2 database. The download or build process may take significant time, depending on system resources. When complete, the
 Kraken2 job in the Galaxy History panel will turn green:
 
-[installation-local-data-kraken2-builder-db-complete][]
+![installation-local-data-kraken2-builder-db-complete][]
 
 ## Installing to IRIDA
 
