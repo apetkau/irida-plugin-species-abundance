@@ -85,6 +85,10 @@ Each bracken database corresponds to a specific Kraken2 database. Select the Kra
 
 ![installation-local-data-bracken-builder-kraken-db][]
 
+If the Kraken2 database selected in the step above is a pre-built database, select 'Yes'. If it was locally-built, select 'No':
+
+![installation-local-data-bracken-builder-kraken-db-prebuilt][]
+
 Each bracken database is configured for a specific read length. All pre-built Kraken2 databased from the [Index Zone](https://benlangmead.github.io/aws-indexes/k2)
 come bundled with a set of Bracken databases for a variety of read lengths. Select the read length that is appropriate for your dataset:
 
