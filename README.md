@@ -14,6 +14,8 @@ This can be used to estimate the relative abundance of sequence reads originatin
    * [Installation](#installation)
       * [Installing Galaxy Dependencies](#installing-galaxy-dependencies)
       * [Preparing Databases](#preparing-databases)
+        * [Preparing the Kraken2 Database](#preparing-the-kraken2-database)
+        * [Preparing the Bracken Database](#preparing-the-bracken-database)
       * [Installing to IRIDA](#installing-to-irida)
    * [Usage](#usage)
       * [Analysis Results](#analysis-results)
@@ -73,6 +75,34 @@ Kraken2 job in the Galaxy History panel will turn green:
 
 ![installation-local-data-kraken2-builder-db-complete][]
 
+### Preparing the Bracken Database
+
+On the 'Local Data' page, select 'Bracken database builder' from the 'Installed Data Managers' list:
+
+![installation-local-data-bracken-builder][]
+
+Each bracken database corresponds to a specific Kraken2 database. Select the Kraken2 database that was installed in the previous section.
+
+![installation-local-data-bracken-builder-kraken-db][]
+
+Each bracken database is configured for a specific read length. All pre-built Kraken2 databased from the [Index Zone](https://benlangmead.github.io/aws-indexes/k2)
+come bundled with a set of Bracken databases for a variety of read lengths. Select the read length that is appropriate for your dataset:
+
+![installation-local-data-bracken-builder-read-length][]
+
+If necessary, additional bracken databases can be built based on the same kraken2 database, but with different read lengths. This may be necessary if some of your samples were
+sequenced with read length of 150, and others with read length of 250, for example.
+
+Give your bracken database a name. This is a free-text field, and it will be presented to the IRIDA user when they are asked to select a bracken database to use for their analysis.
+Give the bracken database a name that clearly indicates which kraken2 database it corresponds to, and which read length it is configured for.
+
+![installation-local-data-bracken-builder-name][]
+
+Click the 'Execute' button to begin building the bracken database. If a pre-built Kraken2 database was selected, this step should complete quickly. When complete, the
+Bracken Database Builder job in the Galaxy History panel will turn green:
+
+![installation-local-data-bracken-builder-db-complete][]
+
 ## Installing to IRIDA
 
 Please download the provided `irida-plugin-species-abundance-[version].jar` from the [releases](https://github.com/Public-Health-Bioinformatics/irida-plugin-species-abundance/releases)
@@ -98,13 +128,26 @@ classification report, and a `bracken` estimate of the relative abundance of rea
 And, you should be able to save and view these results in the IRIDA metadata table. The following fields are written to
 the IRIDA 'Line List':
 
-| Field Name                       | Description                                                                  |
-|----------------------------------|------------------------------------------------------------------------------|
-| species-abundance/taxon_name     | The scientific name of the most abundant species in the sample               |
-| species-abundance/taxonomy_level | The taxonomic level at which reads were aggregated ('S' for species)         |
-| species-abundance/taxonomy_id    | The NCBI taxonomy ID for the most abundant species in the sample             |
-| species-abundance/proportion     | The proportion of reads in this sample assigned to the most abundant species |
+| Field Name                         | Description                                                                         |
+|------------------------------------|-------------------------------------------------------------------------------------|
+| species-abundance/taxonomy_level   | The taxonomic level at which reads were aggregated ('S' for species)                |
+| species-abundance/taxon_name       | The scientific name of the most abundant species in the sample                      |
+| species-abundance/taxonomy_id      | The NCBI taxonomy ID for the most abundant species in the sample                    |
+| species-abundance/proportion       | The proportion of reads in this sample assigned to the most abundant species        |
+| species-abundance/taxon_name_2     | The scientific name of the second-most abundant species in the sample               |
+| species-abundance/taxonomy_id_2    | The NCBI taxonomy ID for the second-most abundant species in the sample             |
+| species-abundance/proportion_2     | The proportion of reads in this sample assigned to the second-most abundant species |
+| species-abundance/taxon_name_3     | The scientific name of the third-most abundant species in the sample                |
+| species-abundance/taxonomy_id_3    | The NCBI taxonomy ID for the third-most abundant species in the sample              |
+| species-abundance/proportion_3     | The proportion of reads in this sample assigned to the third-most abundant species  |
+| species-abundance/taxon_name_4     | The scientific name of the fourth-most abundant species in the sample               |
+| species-abundance/taxonomy_id_4    | The NCBI taxonomy ID for the fourth-most abundant species in the sample             |
+| species-abundance/proportion_4     | The proportion of reads in this sample assigned to the fourth-most abundant species |
+| species-abundance/taxon_name_5     | The scientific name of the fifth-most abundant species in the sample                |
+| species-abundance/taxonomy_id_5    | The NCBI taxonomy ID for the fifth-most abundant species in the sample              |
+| species-abundance/proportion_5     | The proportion of reads in this sample assigned to the fifth-most abundant species  |
 
+Note that by default, these fields will not appear in sorted order in the line list. Refer to the [IRIDA Documentation on metadata management](https://phac-nml.github.io/irida-documentation/user/user/sample-metadata/#project-metadata-line-list) to create a customized view of these fields.
 
 ![plugin-metadata.png][]
 
@@ -182,6 +225,12 @@ The following dependencies are required in order to make use of this plugin.
 [installation-local-data-kraken2-builder-db-size]: doc/images/installation-local-data-kraken2-builder-db-size.png
 [installation-local-data-kraken2-builder-db-date]: doc/images/installation-local-data-kraken2-builder-db-date.png
 [installation-local-data-kraken2-builder-db-complete]: doc/images/installation-local-data-kraken2-builder-db-complete.png
+[installation-local-data-bracken-builder]: doc/images/installation-local-data-bracken-builder.png
+[installation-local-data-bracken-builder-kraken-db]: doc/images/installation-local-data-bracken-builder-kraken-db.png
+[installation-local-data-bracken-builder-kraken-db-prebuilt]: doc/images/installation-local-data-bracken-builder-kraken-db-prebuilt.png
+[installation-local-data-bracken-builder-read-length]: doc/images/installation-local-data-bracken-builder-read-length.png
+[installation-local-data-bracken-builder-name]: doc/images/installation-local-data-bracken-builder-name.png
+[installation-local-data-bracken-builder-db-complete]: doc/images/installation-local-data-bracken-builder-db-complete.png
 [plugin-results.png]: doc/images/plugin-results.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
