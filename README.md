@@ -178,9 +178,9 @@ The following dependencies are required in order to make use of this plugin.
 [pf4j-start]: https://pf4j.org/doc/getting-started.html
 [installation-local-data]: doc/images/installation-local-data.png
 [installation-local-data-kraken2-builder]: doc/images/installation-local-data-kraken2-builder.png
-[intallation-local-data-kraken2-builder-db-type]: doc/images/installation-local-data-kraken2-builder-db-type.png
-[intallation-local-data-kraken2-builder-db-size]: doc/images/installation-local-data-kraken2-builder-db-size.png
-[intallation-local-data-kraken2-builder-db-date]: doc/images/installation-local-data-kraken2-builder-db-date.png
+[installation-local-data-kraken2-builder-db-type]: doc/images/installation-local-data-kraken2-builder-db-type.png
+[installation-local-data-kraken2-builder-db-size]: doc/images/installation-local-data-kraken2-builder-db-size.png
+[installation-local-data-kraken2-builder-db-date]: doc/images/installation-local-data-kraken2-builder-db-date.png
 [installation-local-data-kraken2-builder-db-complete]: doc/images/installation-local-data-kraken2-builder-db-complete
 [plugin-results.png]: doc/images/plugin-results.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
