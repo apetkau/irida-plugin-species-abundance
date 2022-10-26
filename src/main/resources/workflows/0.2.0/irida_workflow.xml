@@ -37,6 +37,18 @@
   </outputs>
   <toolRepositories>
     <repository>
+      <name>fastp</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>65b93b623c77</revision>
+    </repository>
+    <repository>
+      <name>fastp_json_to_tabular</name>
+      <owner>public-health-bioinformatics</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>091a2fb2e7ad</revision>
+    </repository>
+    <repository>
       <name>kraken2</name>
       <owner>iuc</owner>
       <url>https://toolshed.g2.bx.psu.edu</url>
@@ -49,10 +61,16 @@
       <revision>b08ac10aed96</revision>
     </repository>
     <repository>
+      <name>adjust_bracken_for_unclassified_reads</name>
+      <owner>public-health-bioinformatics</owner>
+      <url>https://toolshed.g2.bx.psu.edu</url>
+      <revision>3cde438eb222</revision>
+    </repository>
+    <repository>
       <name>data_manager_build_kraken2_database</name>
       <owner>iuc</owner>
       <url>https://toolshed.g2.bx.psu.edu</url>
-      <revision>2f27f3b86827</revision>
+      <revision>9002633b4737</revision>
     </repository>
     <repository>
       <name>data_manager_build_bracken_database</name>

@@ -20,14 +20,14 @@
             "name": "Input dataset collection",
             "outputs": [],
             "position": {
-                "bottom": 393.1999969482422,
+                "bottom": 427.1999969482422,
                 "height": 82.19999694824219,
-                "left": 404,
-                "right": 604,
-                "top": 311,
+                "left": 534.5,
+                "right": 734.5,
+                "top": 345,
                 "width": 200,
-                "x": 404,
-                "y": 311
+                "x": 534.5,
+                "y": 345
             },
             "tool_id": null,
             "tool_state": "{\"optional\": false, \"collection_type\": \"list:paired\"}",
@@ -38,29 +38,99 @@
                 {
                     "label": null,
                     "output_name": "output",
-                    "uuid": "74f4077e-a130-4fd5-81cb-d4d4ec8ad4e6"
+                    "uuid": "47d0d26f-7c5c-435f-bfd9-95747b28ba77"
                 }
             ]
         },
         "1": {
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.1.1+galaxy1",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0",
             "errors": null,
             "id": 1,
             "input_connections": {
-                "single_paired|input_pair": {
+                "single_paired|paired_input": {
                     "id": 0,
                     "output_name": "output"
                 }
             },
             "inputs": [
                 {
-                    "description": "runtime parameter for tool Kraken2",
-                    "name": "kraken2_database"
+                    "description": "runtime parameter for tool fastp",
+                    "name": "single_paired"
+                }
+            ],
+            "label": null,
+            "name": "fastp",
+            "outputs": [
+                {
+                    "name": "output_paired_coll",
+                    "type": "input"
                 },
                 {
+                    "name": "report_html",
+                    "type": "html"
+                },
+                {
+                    "name": "report_json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 664.1999969482422,
+                "height": 215.1999969482422,
+                "left": 534.5,
+                "right": 734.5,
+                "top": 449,
+                "width": 200,
+                "x": 534.5,
+                "y": 449
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_paired_coll": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_paired_coll"
+                },
+                "HideDatasetActionreport_json": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report_json"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "65b93b623c77",
+                "name": "fastp",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter_options\": {\"quality_filtering_options\": {\"disable_quality_filtering\": \"false\", \"qualified_quality_phred\": \"\", \"unqualified_percent_limit\": \"\", \"n_base_limit\": \"\"}, \"length_filtering_options\": {\"disable_length_filtering\": \"true\", \"length_required\": \"\", \"length_limit\": \"\"}, \"low_complexity_filter\": {\"enable_low_complexity_filter\": \"false\", \"complexity_threshold\": \"\"}}, \"output_options\": {\"report_html\": \"true\", \"report_json\": \"true\"}, \"overrepresented_sequence_analysis\": {\"overrepresentation_analysis\": \"false\", \"overrepresentation_sampling\": \"\"}, \"read_mod_options\": {\"polyg_tail_trimming\": {\"trimming_select\": \"\", \"__current_case__\": 1, \"poly_g_min_len\": \"\"}, \"polyx_tail_trimming\": {\"polyx_trimming_select\": \"\", \"__current_case__\": 1}, \"umi_processing\": {\"umi\": \"false\", \"umi_loc\": \"\", \"umi_len\": \"\", \"umi_prefix\": \"\"}, \"cutting_by_quality_options\": {\"cut_by_quality5\": \"false\", \"cut_by_quality3\": \"false\", \"cut_window_size\": \"\", \"cut_mean_quality\": \"\"}, \"base_correction_options\": {\"correction\": \"false\"}}, \"single_paired\": {\"single_paired_selector\": \"paired_collection\", \"__current_case__\": 2, \"paired_input\": {\"__class__\": \"RuntimeValue\"}, \"adapter_trimming_options\": {\"disable_adapter_trimming\": \"false\", \"adapter_sequence1\": \"\", \"adapter_sequence2\": \"\"}, \"global_trimming_options\": {\"trim_front1\": \"\", \"trim_tail1\": \"\", \"trim_front2\": \"\", \"trim_tail2\": \"\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.23.2+galaxy0",
+            "type": "tool",
+            "uuid": "b883bf80-c0f4-4921-8953-fa15063f2a35",
+            "workflow_outputs": [
+                {
+                    "label": "fastp on input dataset(s): HTML report",
+                    "output_name": "report_html",
+                    "uuid": "5504006f-1520-40b3-b29b-d20d528bba63"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/kraken2/kraken2/2.1.1+galaxy1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "single_paired|input_pair": {
+                    "id": 1,
+                    "output_name": "output_paired_coll"
+                }
+            },
+            "inputs": [
+                {
                     "description": "runtime parameter for tool Kraken2",
-                    "name": "single_paired"
+                    "name": "kraken2_database"
                 }
             ],
             "label": null,
@@ -76,14 +146,14 @@
                 }
             ],
             "position": {
-                "bottom": 548.8000030517578,
+                "bottom": 555.8000030517578,
                 "height": 184.8000030517578,
-                "left": 699.5,
-                "right": 899.5,
-                "top": 364,
+                "left": 794,
+                "right": 994,
+                "top": 371,
                 "width": 200,
-                "x": 699.5,
-                "y": 364
+                "x": 794,
+                "y": 371
             },
             "post_job_actions": {
                 "HideDatasetActionoutput": {
@@ -106,7 +176,7 @@
                 "owner": "iuc",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
-            "tool_state": "{\"confidence\": \"0.0\", \"kraken2_database\": {\"__class__\": \"RuntimeValue\"}, \"min_base_quality\": \"0\", \"minimum_hit_groups\": \"2\", \"quick\": \"false\", \"report\": {\"create_report\": \"true\", \"use_mpa_style\": \"false\", \"report_zero_counts\": \"false\", \"report_minimizer_data\": \"false\"}, \"single_paired\": {\"single_paired_selector\": \"collection\", \"__current_case__\": 0, \"input_pair\": {\"__class__\": \"RuntimeValue\"}}, \"split_reads\": \"false\", \"use_names\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"confidence\": \"0.0\", \"kraken2_database\": {\"__class__\": \"RuntimeValue\"}, \"min_base_quality\": \"0\", \"minimum_hit_groups\": \"2\", \"quick\": \"false\", \"report\": {\"create_report\": \"true\", \"use_mpa_style\": \"false\", \"report_zero_counts\": \"false\", \"report_minimizer_data\": \"false\"}, \"single_paired\": {\"single_paired_selector\": \"collection\", \"__current_case__\": 0, \"input_pair\": {\"__class__\": \"ConnectedValue\"}}, \"split_reads\": \"false\", \"use_names\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
             "tool_version": "2.1.1+galaxy1",
             "type": "tool",
             "uuid": "42c0cfee-0b13-42b1-8c0d-21935b8265c5",
@@ -114,18 +184,68 @@
                 {
                     "label": null,
                     "output_name": "report_output",
-                    "uuid": "ce5b43d7-5b79-4a4a-8cb9-67faec7b3118"
+                    "uuid": "6bf2d603-3195-4ae7-b918-65f192fcb416"
                 }
             ]
         },
-        "2": {
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/public-health-bioinformatics/fastp_json_to_tabular/fastp_json_to_tabular/0.1.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "report": {
+                    "id": 1,
+                    "output_name": "report_json"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Convert fastp json report to tabular",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 756.6000061035156,
+                "height": 113.60000610351562,
+                "left": 795,
+                "right": 995,
+                "top": 643,
+                "width": 200,
+                "x": 795,
+                "y": 643
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/public-health-bioinformatics/fastp_json_to_tabular/fastp_json_to_tabular/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "091a2fb2e7ad",
+                "name": "fastp_json_to_tabular",
+                "owner": "public-health-bioinformatics",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"report\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "1eb5e4da-881f-4fb9-8bed-124a02adbe8e",
+            "workflow_outputs": [
+                {
+                    "label": "fastp report",
+                    "output_name": "output",
+                    "uuid": "27c66394-5fcc-464d-b3d9-fcd6b6da6314"
+                }
+            ]
+        },
+        "4": {
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bracken/est_abundance/2.6.1+galaxy0",
             "errors": null,
-            "id": 2,
+            "id": 4,
             "input_connections": {
                 "input": {
-                    "id": 1,
+                    "id": 2,
                     "output_name": "report_output"
                 }
             },
@@ -144,14 +264,14 @@
                 }
             ],
             "position": {
-                "bottom": 541.3000030517578,
+                "bottom": 694.3000030517578,
                 "height": 174.8000030517578,
-                "left": 1019,
-                "right": 1219,
-                "top": 366.5,
+                "left": 1044.5,
+                "right": 1244.5,
+                "top": 519.5,
                 "width": 200,
-                "x": 1019,
-                "y": 366.5
+                "x": 1044.5,
+                "y": 519.5
             },
             "post_job_actions": {
                 "HideDatasetActionreport": {
@@ -173,60 +293,77 @@
             "uuid": "928eb838-cb82-4621-b309-cbe0e4487d47",
             "workflow_outputs": []
         },
-        "3": {
+        "5": {
             "annotation": "",
-            "content_id": "sort1",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/public-health-bioinformatics/adjust_bracken_for_unclassified_reads/adjust_bracken_for_unclassified_reads/0.1.0",
             "errors": null,
-            "id": 3,
+            "id": 5,
             "input_connections": {
-                "input": {
-                    "id": 2,
+                "bracken_abundances": {
+                    "id": 4,
                     "output_name": "report"
+                },
+                "kraken_report": {
+                    "id": 2,
+                    "output_name": "report_output"
                 }
             },
             "inputs": [],
             "label": null,
-            "name": "Sort",
+            "name": "Adjust Bracken Report for Unclassified Reads",
             "outputs": [
                 {
-                    "name": "out_file1",
-                    "type": "input"
+                    "name": "adjusted_bracken_report",
+                    "type": "txt"
                 }
             ],
             "position": {
-                "bottom": 659.6999969482422,
-                "height": 93.19999694824219,
-                "left": 1020.5,
-                "right": 1220.5,
-                "top": 566.5,
+                "bottom": 520,
+                "height": 144,
+                "left": 1290.5,
+                "right": 1490.5,
+                "top": 376,
                 "width": 200,
-                "x": 1020.5,
-                "y": 566.5
+                "x": 1290.5,
+                "y": 376
             },
             "post_job_actions": {
-                "RenameDatasetActionout_file1": {
+                "ChangeDatatypeActionadjusted_bracken_report": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "adjusted_bracken_report"
+                },
+                "RenameDatasetActionadjusted_bracken_report": {
                     "action_arguments": {
                         "newname": "species_abundance.tsv"
                     },
                     "action_type": "RenameDatasetAction",
-                    "output_name": "out_file1"
+                    "output_name": "adjusted_bracken_report"
                 }
             },
-            "tool_id": "sort1",
-            "tool_state": "{\"column\": \"7\", \"column_set\": [], \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"order\": \"DESC\", \"style\": \"num\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
-            "tool_version": "1.1.0",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/public-health-bioinformatics/adjust_bracken_for_unclassified_reads/adjust_bracken_for_unclassified_reads/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "3cde438eb222",
+                "name": "adjust_bracken_for_unclassified_reads",
+                "owner": "public-health-bioinformatics",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"bracken_abundances\": {\"__class__\": \"ConnectedValue\"}, \"kraken_report\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
             "type": "tool",
-            "uuid": "1099f9c0-fe03-4de1-9ab7-1942fba74c84",
+            "uuid": "ea8fb580-bd58-4411-b883-1a63caa63b89",
             "workflow_outputs": [
                 {
                     "label": null,
-                    "output_name": "out_file1",
-                    "uuid": "2a638a07-394c-4ce0-9f8e-1ea63257bc45"
+                    "output_name": "adjusted_bracken_report",
+                    "uuid": "46a9ebc5-8716-4979-b8e4-ee90705d857e"
                 }
             ]
         }
     },
     "tags": [],
-    "uuid": "7cc54272-1de8-4efb-a4d9-e3e5501252e2",
-    "version": 1
+    "uuid": "34f525e2-55f0-4346-a3c8-0533f9e374d4",
+    "version": 16
 }

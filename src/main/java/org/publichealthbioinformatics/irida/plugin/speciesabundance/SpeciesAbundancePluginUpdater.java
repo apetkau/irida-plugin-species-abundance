@@ -121,7 +121,7 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 				}
 				metadataEntries.put(key, entry);
 
-				value = species.get("fraction_total_reads");
+				value = species.get("bracken_fraction_total_seqs");
 				entry = new PipelineProvidedMetadataEntry(value, "float", analysis);
 				if (speciesNum == 1) {
 					key = workflowName + "/" + "proportion";
@@ -150,8 +150,8 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 	 *                      should look like:
 	 *
 	 *                      <pre>
-	 *                      name	taxonomy_id	taxonomy_lvl	kraken_assigned_reads	added_reads	new_est_reads	fraction_total_reads
-	 *                      Salmonella enterica	28901	S	433515	32457	465972	0.99016
+	 *                      name	taxonomy_id	taxonomy_lvl	kraken_assigned_seqs	bracken_assigned_seqs	total_seqs	kraken_fraction_total_seqs	bracken_fraction_total_seqs
+	 *                      Salmonella enterica	28901	S	228436	841169	848138	0.269338	0.991783
 	 *                      </pre>
 	 *
 	 * @return A {@link Map<String, String>} containing the read count.
@@ -165,10 +165,11 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 				"name",
 		        "taxonomy_id",
 		        "taxonomy_lvl",
-		        "kraken_assigned_reads",
-		        "added_reads",
-		        "new_est_reads",
-		        "fraction_total_reads"
+		        "kraken_assigned_seqs",
+				"bracken_assigned_seqs",
+		        "total_seqs",
+		        "kraken_fraction_total_seqs",
+		        "bracken_fraction_total_seqs"
 		));
 		try {
 			String headerLine = speciesAbundanceReader.readLine();
