@@ -89,12 +89,16 @@ public class SpeciesAbundancePluginUpdater implements AnalysisSampleUpdater {
 			String workflowName = iridaWorkflow.getWorkflowDescription().getName();
 
 			List<Map<String, String>> speciesAbundances = parseSpeciesAbundanceFile(speciesAbundanceFilePath);
+			Map<String, String> unclassifiedAbundances = speciesAbundances.remove(0);
+			String key;
+			String value;
+			PipelineProvidedMetadataEntry entry;
+			value = unclassifiedAbundances.get("bracken_fraction_total_seqs");
+			entry = new PipelineProvidedMetadataEntry(value, "float", analysis);
+			key = workflowName + "/" + "proportion_unclassified";
+			metadataEntries.put(key, entry);
 			int speciesNum = 1;
 			for (Map<String, String> species : speciesAbundances) {
-				String key;
-				String value;
-				PipelineProvidedMetadataEntry entry;
-
 				value = species.get("taxonomy_lvl");
 				entry = new PipelineProvidedMetadataEntry(value, "text", analysis);
 				// taxonomy_level is only recorded once per sample. (should be identical for all lines in a report.)

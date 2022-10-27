@@ -32,6 +32,7 @@
     </parameter>
   </parameters>
   <outputs>
+    <output name="fastp_report" fileName="fastp_report.html" />
     <output name="species_abundance" fileName="species_abundance.tsv" />
     <output name="kraken2_report" fileName="kraken2_report.tsv" />
   </outputs>
@@ -64,7 +65,7 @@
       <name>adjust_bracken_for_unclassified_reads</name>
       <owner>public-health-bioinformatics</owner>
       <url>https://toolshed.g2.bx.psu.edu</url>
-      <revision>3cde438eb222</revision>
+      <revision>87459bd1615a</revision>
     </repository>
     <repository>
       <name>data_manager_build_kraken2_database</name>
